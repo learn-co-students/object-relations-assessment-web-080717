@@ -1,3 +1,4 @@
 require 'bundler/setup'
 Bundler.require
-require_all 'app'
+require "./solution.rb"
+# require_all 'app'
