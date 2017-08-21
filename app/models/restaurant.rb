@@ -19,5 +19,4 @@ class Restaurant
   end
 
 
-
 end
