@@ -6,7 +6,6 @@ describe Review do
       r = Restaurant.new
       c = Customer.new
       Review.new(customer: c, restaurant: r)
-
     end
   end
 
