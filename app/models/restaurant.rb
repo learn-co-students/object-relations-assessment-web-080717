@@ -6,12 +6,11 @@ class Restaurant
 
   def initialize(name)
     @name = name
+    @@all << self
   end
 
   def self.all
-    Review.all.collect do |review|
-      review.restaurant
-    end
+    @@all
   end
 
   def self.find_by_name(name)
