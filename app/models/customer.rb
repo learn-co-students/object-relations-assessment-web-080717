@@ -19,17 +19,13 @@ class Customer
   end
 
 
-  def self.find_by_name(full_name)
-    self.all.find do |name|
-      full_name == name
-    end
+  def self.find_by_name(name)
+    self.all.find { |customer| customer.full_name == name}
   end
 
 
   def self.find_all_by_first_name(first_name)
-    self.all.find do |customer|
-      customer.first_name
-    end
+    self.all.find_all { |customer| customer.first_name == first_name }
   end
 
   def self.all_names
