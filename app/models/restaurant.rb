@@ -16,21 +16,18 @@ class Restaurant
 
   def self.find_by_name(name)
     self.all.find do |restaurant|
-      restaurant == name
+      restaurant.name == name
     end
   end
 
   def reviews
     Review.all.select do |review|
-      review.restaurant == self.name
+      review.restaurant == self
     end
   end
 
   def customers
-    this_restos_reviews = Review.all.select do |review|
-      review.restaurant == self.name
-    end
-    this_restos_reviews.collect do |review|
+    self.reviews.collect do |review|
       review.customer
     end
   end

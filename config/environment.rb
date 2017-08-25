@@ -11,9 +11,9 @@ tim = Customer.new("Tim", "Fitz")
 zach = Customer.new("Zach", "Kropf")
 bee = Customer.new("Bee", "Dodds")
 
-review1 = Review.new("Dig Inn", "Review 1", "Tim Fitz")
-review2 = Review.new("Just Salad","Review 2", "Bee Dodds")
-review3 = Review.new("Chopt","Review 3", "Tim Fitz")
+review1 = Review.new(dig_inn, "Review 1", tim)
+review2 = Review.new(just_salad,"Review 2", bee)
+review3 = Review.new(chopt,"Review 3", tim)
 
 binding.pry
 

@@ -7,6 +7,7 @@ class Customer
   def initialize(first_name, last_name)
     @first_name = first_name
     @last_name  = last_name
+    @@all << self
   end
 
   def full_name
@@ -14,9 +15,7 @@ class Customer
   end
 
   def self.all
-    Review.all.collect do |review|
-      review.customer
-    end
+    @@all
   end
 
 
@@ -28,15 +27,14 @@ class Customer
 
 
   def self.find_all_by_first_name(first_name)
-    whole_name = self.all.select do |name|
-      first_name == name.split(" ")[0]
+    self.all.find do |customer|
+      customer.first_name
     end
-    whole_name.split(" ")[0]
   end
 
   def self.all_names
-    Customer.all.collect do |name|
-      name
+    Customer.all.collect do |customer|
+      customer.full_name
     end
   end
 
